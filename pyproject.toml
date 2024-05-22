@@ -17,5 +17,8 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 
+[tool.setuptools]
+py-modules=['bs']
+
 [project.urls]
 Homepage = "https://github.com/pypa/bootstrapping"
