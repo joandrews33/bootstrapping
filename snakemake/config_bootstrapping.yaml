@@ -5,12 +5,16 @@ PROCESS_DIRECTORY: '../process/output'
 
 DROP_DUPLICATES: True
 
+MIN_COUNTS: 30 #Drop guides with fewer than this number of cells
+
 POPULATION_FEATURE: 'gene_symbol' #typically either 'gene_symbol' or 'cell_barcode_0'
 
 TARGET_FEATURES: ['area_cell','area_nucleus','dapi_gfp_corr_cell','dapi_median_nucleus','gfp_median_nucleus','gfp_median_cytoplasm','gfp_median_cell']
+
+TARGET_GENES: 'all'
 
 TRANSFORM_FEATURES: True
 
 VARIATE: 'median' #implemented: 'median' and 'auc'
 
-BOOTSTRAP_SAMPLE: 1000 #100000 Do I need to split this in two for power vs volcano? 
+BOOTSTRAP_SAMPLES: 1000 #I usually target this number to be 1E5 divided by the number of distict null guides in the library. 
